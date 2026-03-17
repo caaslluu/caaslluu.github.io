@@ -190,7 +190,7 @@ export default function Portfolio() {
         <div className="flex flex-col gap-12">
           {/* SRE */}
           <div className="max-w-7xl mx-auto w-full">
-            <div className="text-5xl mb-6">🦊</div>
+            <div className="text-5xl mb-6"><i className="fab fa-gitlab"></i></div>
             <h3 className="text-xl font-bold mb-3 tracking-tight">Site Reliability Engineering</h3>
             <p className={`${secondaryText} mb-4 text-sm leading-relaxed`}>
               As an SRE, I build and maintain reliable, scalable, and automated infrastructure, with strong proficiency in incident management, observability, and CI/CD.
