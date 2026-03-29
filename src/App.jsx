@@ -2,6 +2,18 @@ import { useState } from 'react';
 import { Sun, Moon, Github, Linkedin, Mail, Globe, Home, Heart } from 'lucide-react';
 import './App.css';
 
+const RootMeIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 12 C71 12 88 29 88 50 C88 71 71 88 50 88 C29 88 12 71 12 50 C12 29 29 12 50 12 Z" />
+    <path d="M35 30 L35 70 L45 70 L45 55 L52 55 L62 70 L73 70 L62 53 C67 51 70 46 70 40 C70 34 65 30 58 30 Z M45 38 L57 38 C60 38 62 40 62 43 C62 46 60 48 57 48 L45 48 Z" />
+  </svg>
+);
+
 export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +36,8 @@ export default function Portfolio() {
     { icon: Github, label: "GitHub", href: "https://github.com/caaslluu" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucas-rq/" },
     { icon: Mail, label: "Email", href: "mailto:contact@caslu.fr" },
-    { custom: '<i class="fab fa-stack-overflow"></i>', label: "Stack Overflow", href: "https://stackoverflow.com/users/32209837/caaslluu" },
+    { custom: 'fa-stack-overflow', label: "Stack Overflow", href: "https://stackoverflow.com/users/32209837/caaslluu" },
+    { rootme: true, label: "Root Me", href: "https://root-me.org/mall0c" },
   ];
 
   return (
@@ -39,7 +52,7 @@ export default function Portfolio() {
         .font-ubuntu {
           font-family: 'Ubuntu', sans-serif;
         }
-        
+
         @keyframes neon-flicker {
           0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
             opacity: 0.5;
@@ -50,21 +63,21 @@ export default function Portfolio() {
             filter: blur(0px);
           }
         }
-        
+
         @keyframes circuit-flow {
           0%, 100% { transform: translateX(0) translateY(0); }
           25% { transform: translateX(20px) translateY(-10px); }
           50% { transform: translateX(-10px) translateY(15px); }
           75% { transform: translateX(15px) translateY(10px); }
         }
-        
+
         .neon-light {
           position: fixed;
           pointer-events: none;
           z-index: 0;
           border-radius: 50%;
         }
-        
+
         /* Smog ball - grey */
         .neon-tube-1 {
           width: 150px;
@@ -77,7 +90,7 @@ export default function Portfolio() {
                       0 0 70px rgba(200, 200, 200, 0.15);
           animation: neon-flicker 4s infinite, circuit-flow 6s ease-in-out infinite;
         }
-        
+
         /* Smog ball - yellow */
         .neon-tube-2 {
           width: 130px;
@@ -90,7 +103,7 @@ export default function Portfolio() {
                       0 0 65px rgba(255, 223, 0, 0.2);
           animation: neon-flicker 5s infinite 1s, circuit-flow 7s ease-in-out infinite;
         }
-        
+
         /* Smog ball - grey light */
         .neon-tube-3 {
           width: 140px;
@@ -165,8 +178,19 @@ export default function Portfolio() {
                 className={`${secondaryText} hover:text-purple-500 transition-colors flex items-center justify-center`}
                 title={social.label}
               >
-                {social.custom ? (
-                  <i className="fab fa-stack-overflow text-[24px]"></i>
+                {social.rootme ? (
+                  <img
+                    src="https://www.root-me.org/IMG/logo/siteon0.svg"
+                    alt="Root Me"
+                    className="w-8 h-8"
+                    style={{ filter: isDark ? 'invert(1) brightness(0.6)' : 'invert(0.4)' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'inline';
+                    }}
+                  />
+                ) : social.custom ? (
+                  <i className={`fab ${social.custom} text-[24px]`}></i>
                 ) : (
                   <social.icon className="w-6 h-6" />
                 )}
@@ -176,7 +200,7 @@ export default function Portfolio() {
 
           {/* Subtitle with Role */}
           <div className={`${secondaryText} text-lg font-ubuntu`}>
-            <p className="mb-2">DevOps Integrator & SRE</p>
+            <p className="mb-2">DevOps Integrator & SRE/infosec enjoyer</p>
           </div>
         </div>
       </section>
@@ -250,7 +274,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className={`border-t ${borderColor} py-8 text-center ${secondaryText} text-sm relative z-10`}>
         <p className="flex items-center justify-center gap-1">
-          Made with <Heart className="w-4 h-4 fill-current" /> using React | <i>contact@caslu.fr</i>
+          <i>contact@caslu.fr</i>
         </p>
       </footer>
     </div>
