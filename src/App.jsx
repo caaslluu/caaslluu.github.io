@@ -166,7 +166,7 @@ export default function Portfolio() {
           {/* Name & Tagline */}
           <h1 className="text-6xl md:text-7xl font-bold mb-4 tracking-tight">caslu</h1>
           <p className={`text-xl md:text-2xl ${secondaryText} mb-8 max-w-2xl mx-auto font-ubuntu`}>
-            cs-student who enjoys modernizing 🇫🇷 public infrastructure
+            cs-student who enjoys modernizing IT infrastructure
           </p>
 
           {/* Social Links */}
