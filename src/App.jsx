@@ -36,7 +36,11 @@ export default function Portfolio() {
     { icon: Github, label: "GitHub", href: "https://github.com/caaslluu" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lucas-rq/" },
     { icon: Mail, label: "Email", href: "mailto:contact@caslu.fr" },
-    { custom: 'fa-stack-overflow', label: "Stack Overflow", href: "https://stackoverflow.com/users/32209837/caaslluu" },
+    {
+      img: "https://cdn.sanity.io/images/d51e1jt0/production/443a08282df5f1a9205a3c8363590ea18c70b964-267x348.svg",
+      label: "YesWeHack",
+      href: "https://yeswehack.com/hunters/prooot"
+    },
     { rootme: true, label: "Root Me", href: "https://root-me.org/mall0c" },
   ];
 
@@ -166,7 +170,7 @@ export default function Portfolio() {
           {/* Name & Tagline */}
           <h1 className="text-6xl md:text-7xl font-bold mb-4 tracking-tight">caslu</h1>
           <p className={`text-xl md:text-2xl ${secondaryText} mb-8 max-w-2xl mx-auto font-ubuntu`}>
-            cs-student who enjoys modernizing IT infrastructure
+            cs-student who enjoys modernizing public IT infrastructure 🥖 🇫🇷
           </p>
 
           {/* Social Links */}
@@ -189,6 +193,17 @@ export default function Portfolio() {
                       e.target.nextSibling.style.display = 'inline';
                     }}
                   />
+                ) : social.img ? (
+                  <img
+                    src={social.img}
+                    alt={social.label}
+                    className="w-6 h-6 object-contain"
+                    style={{ filter: isDark ? 'invert(1) brightness(0.6)' : 'invert(0.4)' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'inline';
+                    }}
+                  />
                 ) : social.custom ? (
                   <i className={`fab ${social.custom} text-[24px]`}></i>
                 ) : (
@@ -200,7 +215,7 @@ export default function Portfolio() {
 
           {/* Subtitle with Role */}
           <div className={`${secondaryText} text-lg font-ubuntu`}>
-            <p className="mb-2">DevOps Integrator & SRE/infosec enjoyer</p>
+            <p className="mb-2"><i>Ops Engineer</i> -  SRE / infosec enjoyer</p>
           </div>
         </div>
       </section>
