@@ -170,7 +170,7 @@ export default function Portfolio() {
           {/* Name & Tagline */}
           <h1 className="text-6xl md:text-7xl font-bold mb-4 tracking-tight">caslu</h1>
           <p className={`text-xl md:text-2xl ${secondaryText} mb-8 max-w-2xl mx-auto font-ubuntu`}>
-            cs-student who enjoys modernizing public IT infrastructure 🥖 🇫🇷
+            cs-student who enjoys infosec and cloud computing 🔒 ☁️
           </p>
 
           {/* Social Links */}
@@ -215,7 +215,7 @@ export default function Portfolio() {
 
           {/* Subtitle with Role */}
           <div className={`${secondaryText} text-lg font-ubuntu`}>
-            <p className="mb-2"><i>Ops Engineer</i> -  SRE / infosec enjoyer</p>
+            <p className="mb-2"><i>Cloud / infosec enjoyer</p>
           </div>
         </div>
       </section>
