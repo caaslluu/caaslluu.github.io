@@ -215,7 +215,7 @@ export default function Portfolio() {
 
           {/* Subtitle with Role */}
           <div className={`${secondaryText} text-lg font-ubuntu`}>
-            <p className="mb-2"><i>Cloud / infosec enjoyer</p>
+            <p className="mb-2">Cloud / infosec enjoyer</p>
           </div>
         </div>
       </section>
